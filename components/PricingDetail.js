@@ -6,6 +6,9 @@ import { connect } from 'react-redux';
 
 function PricingDetail({pricingDetails}) {
   const { subtotal, savings, tax, total } = pricingDetails;
+
+  let totalAmount = (subtotal + tax) - savings;
+
   return (
     <>
       <Item>
@@ -28,7 +31,7 @@ function PricingDetail({pricingDetails}) {
       </Item>
       <Item>
         <Text style={styles.totalLabel}>Est total</Text>
-        <Text style={styles.totalPrice}>${total}</Text>
+        <Text style={styles.totalPrice}>${totalAmount.toFixed(2)}</Text>
       </Item>
     </>
   );
