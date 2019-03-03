@@ -1,13 +1,17 @@
-# Sample Snack app
+# Walmart Purchase Summary
 
-Welcome to Expo!
+Try it at https://expo.io/@gokulanath/snack-rJRLTSOLV
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by clicking the **Run** button or use the simulator by clicking **Tap to Play**. When you're done, click **Save** and share the link!
+## How to use
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Export** your project and use it with [expo-cli](https://docs.expo.io/versions/latest/introduction/installation.html).
+### Running the app in local machine
 
-Projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the **Embed** button.
+- `cd` into the `app` directory and run `yarn` or `npm install`
+- `expo start` to try it out.
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.io).
+### To run run the application directly in an Android or iPhone.
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack-web).
+1. On a mobile device, use the Google or iPhone application store to install the Expo client.
+2. Open Expo client (have mobile device attached to the local WiFi subnet).
+3. Use the mobile device camera to scan the QR code from the Expo dashboard.
+4. The device loads and run the created application.
