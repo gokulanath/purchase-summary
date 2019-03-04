@@ -26,19 +26,28 @@ function ItemDetail({itemDetails, pricingDetails}) {
       <AccordionContent>
         <View style={styles.itemDetail}>
           <View style={styles.itemImage}>
-            <Image source={require('../assets/chair.png')} style={styles.image}/>
+            <Image
+  style={{
+    alignSelf: 'center',
+    height: 85,
+    width: 85,
+    borderRadius: 20
+  }}
+  source={require('../assets/chair.png')}
+  resizeMode="stretch"
+/>
           </View>
           <View style={styles.itemContent}>
             <View>
               <Text style={styles.itemTitle}>{itemDetails.itemName}</Text>
             </View>
             <View style={styles.quantityAndPrice}>
-              <Text style={styles.actualPrice}>${subtotal - savings}</Text>
+              <Text style={styles.actualPrice}>${(subtotal - savings).toFixed(2)}</Text>
               <Text>Qty: 1</Text>
             </View>
             <View>
               <Text style={styles.calculatedPrice}>
-                ${subtotal}
+                ${subtotal.toFixed(2)}
               </Text>
             </View>
           </View>
@@ -51,9 +60,10 @@ function ItemDetail({itemDetails, pricingDetails}) {
 
 const styles = StyleSheet.create({
   title: {
+    margin: 5,
     padding: 10,
     borderWidth: 1,
-    borderColor: '#000',
+    borderColor: '#808080',
     fontWeight: 'bold'
   },
   itemDetail: {
@@ -66,8 +76,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end'
   },
   image: {
-    width: 75,
-    height: 75
+    width: 90,
+    height: 90
   },
   itemContent: {
     width: '70%',

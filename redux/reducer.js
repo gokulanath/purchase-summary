@@ -25,12 +25,15 @@ const itemReducer = (state = INITIAL_STATE, action) => {
       };
     
     case 'apply-discount':
+    const {subtotal, savings, tax} = state.pricingDetails;
+    const subTotalAfterDiscount = (subtotal / 100) * (100 - 10);
       return {
         ...state,
         codeApplied: true,
         pricingDetails: {
           ...state.pricingDetails,
-          subtotal: parseFloat((state.pricingDetails.subtotal / 100) * (100 - 10).toFixed(2))
+          subtotal: subTotalAfterDiscount,
+          total: (subTotalAfterDiscount - savings + tax)
         }
       };
     default:

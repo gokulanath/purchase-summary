@@ -13,9 +13,10 @@ class PromoCode extends React.Component {
   }
 
   applyDiscount() {
-    console.log('applying code', this.state.code);
-    if(this.props.itemDetails.discountCode === this.state.code) {
-      console.log('applying code inside', this.state.code);
+    if(
+        this.props.itemDetails.discountCode === this.state.code
+        && !this.props.codeApplied
+      ) {
       this.props.applyDiscount();
     }
   }
@@ -88,9 +89,10 @@ const styles = StyleSheet.create({
     paddingTop: 20
   },
   title: {
+    margin: 5,
     padding: 10,
     borderWidth: 1,
-    borderColor: '#000',
+    borderColor: '#808080',
     fontWeight: 'bold'
   },
   formGroup: {

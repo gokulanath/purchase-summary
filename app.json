@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "purchase-summary",
-    "description": "No description",
+    "description": "Walmart - Shopping cart purchase-summary",
     "slug": "snack-rJRLTSOLV",
     "privacy": "unlisted",
     "sdkVersion": "32.0.0",
@@ -23,6 +23,7 @@
     },
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "githubUrl": "https://github.com/gokulanath/purchase-summary"
   }
 }
