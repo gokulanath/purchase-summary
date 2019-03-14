@@ -14,7 +14,7 @@ import PricingDetail from './PricingDetail';
 import ItemDetail from './ItemDetail';
 import PromoCode from './PromoCode'
 
-import { setLoading, setItemDetails } from './../redux/reducer';
+import { loadItem } from './../redux/reducer';
 
 
 class PurchaseSummary extends React.Component {
@@ -24,9 +24,7 @@ class PurchaseSummary extends React.Component {
   }
 
   async componentDidMount() {
-    this.props.setLoading();
-    const item = await getItemDetails();
-    this.props.setItemDetails(item);
+    this.props.loadItem();
   }
 
   render() {
@@ -77,8 +75,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => (
   bindActionCreators({
-    setLoading,
-    setItemDetails,
+    loadItem,
   }, dispatch)
 );
 

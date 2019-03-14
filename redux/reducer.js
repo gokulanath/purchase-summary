@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { getItemDetails } from './../Api';
 
 const INITIAL_STATE = {
   pricingDetails: {},
@@ -41,6 +42,15 @@ const itemReducer = (state = INITIAL_STATE, action) => {
 export default combineReducers({
   item: itemReducer,
 });
+
+export const loadItem = () => 
+  async (dispatch) => {
+    dispatch(setLoading());
+    return getItemDetails().then(
+      (item) => dispatch(setItemDetails(item)),
+      () => dispatch(setItemDetails({}))
+    )
+  }
 
 
 export const setLoading = () => ({
